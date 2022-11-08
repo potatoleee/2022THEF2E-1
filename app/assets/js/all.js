@@ -1,38 +1,133 @@
-// import { gsap } from "../../../gsap/dist/gsap";
-// import { ScrollTrigger } from "../../../gsap/dist/ScrollTrigger";
-// import { TextPlugin } from "../../../gsap/dist/TextPlugin";
-// import { gsap, ScrollTrigger, TextPlugin } from "../../node_modules/gsap/all.js";
 
-// const { gsap } = require("../../../node_modules/gsap/dist/gsap");
-// const { ScrollTrigger } = require("../../../node_modules/gsap/dist/ScrollTrigger");
-// const { TextPlugin } = require("../../../node_modules/gsap/dist/TextPlugin");
 
-// import { gsap, ScrollTrigger, TextPlugin } from "../../../node_modules/gsap/all.js";
-
-//上面那些官方建議的import方式都不需要了，我想是因為加上這段的原因 `${nodePath}/gsap/dist/all.js`
-//但如果有增加 gsap 其他的套件一樣要新增這段註冊，也不需要加上 type="module"; 但我目前還不知道真正原因，自己測試出來的，助教沒解釋道這部分。
 gsap.registerPlugin(ScrollTrigger, TextPlugin);//套件選填
+const timeline = gsap.timeline()
+timeline.to('.box', {x: 100, duration:1})
+timeline.to('.box', {y: 100, duration:4},"<")
+
+const timeline2 = gsap.timeline()
+timeline2.to('.box5', {x: 100, duration:1}).to('.box6', {x: 100, duration:2},"<")
+
+  gsap.to(".loop", {
+    xPercent: "-50", 
+    ease: "none",
+    duration: 10,
+    repeat: -1,
+  });
 
 
-const tl = gsap.timeline({
+  const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: ".box1",
-      markers: true,
-      start: 'top 35%',
-      end: 'top 1%',
-      scrub: true,
+      trigger: ".box1", // 決定scrolltrigger要以哪一個元素作為觸發基準點
+      markers: true, // 開啟start & end標記點，單純方便瀏覽動畫開始與結束點
+      start: 'top 35%', // 決定動畫開始點的位置
+      end: 'top 1%', // 決定動畫結束點的位置
+      scrub: true, //重要！開啟scrub來決定動畫播放是否依賴視窗滾動
     },
   })
 
-tl.to('.box1', {
-    top: 0,
-    left: '50%',
-    xPercent: '-50',
-    // duration: 10,
-    position: 'absolute',
-  }).to('.box1', {
-    top: '100%',
-    yPercent: '-100',
-    // duration: 20,
-    position: 'absolute',
-  })
+  // 撰寫動畫屬性的感覺其實類似於在寫一般CSS
+
+tl.to('.box1', {//第一段
+  top: 0, // 距外層容器top 0px
+  left: '50%', // 距外層容器left 50%
+  xPercent: '-50', // translate(-50%, 0)
+  duration: 10, // 動畫持續時間之比例
+  position: 'absolute', // position: 'absolute'，絕對位置才能使用left, right...等
+}).to('.box1', {//第二段
+  top: '100%',
+  yPercent: '-100', // translate(0, -100%)
+  duration: 20,
+  position: 'absolute',
+})
+
+const srollTL = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".section3", 
+    pin: true, //重要！ pin需設為true
+    markers: true,
+    scrub: true,
+  },
+});
+
+srollTL.to(".gate-left-1", { yPercent: "-100" });
+srollTL.to(".gate-right-1", { yPercent: "100" }, "<");
+srollTL.to(".gate-left-2", { yPercent: "-100" });
+srollTL.to(".gate-right-2", { yPercent: "100" }, "<");
+
+
+
+
+    
+
+    function animated(element) {
+      let x = 0;
+    
+      //設定元素初始值
+      if(element.classList.contains("from-left")){
+        x = -100;
+      }else if (element.classList.contains("from-right")){
+        x = -100;
+      }
+      element.style.transform = `translate(${x}px, 0px)`;
+  
+      gsap.fromTo(
+        element,
+        // from 開始
+        { x: x, y: 100, opacity: 0, visibility: "hidden" },
+        // to 結束
+        {
+          duration: 1,
+          delay: 0.2,
+          x: 0,
+          y: 0,
+          visibility: "visible",
+          opacity: "1",
+          ease: "expo", // 元素的運動速度變化
+          overwrite: "auto",
+        }
+      );
+    }
+    function hide(element) {
+      gsap.set(element, { opacity: 0, visibility: "hidden" });
+    }
+
+    gsap.to(".typing1", {
+      text: "這裡是第一段", //text屬性將自動為DOM元素嵌入我們所輸入的文字
+      duration: 1.5,
+      scrollTrigger: {
+				trigger: ".typing1",
+        toggleActions: "play pause resume reset ", //見備註
+      },
+    });
+    
+    gsap.fromTo(".cursor",0,
+    {
+      visibility :"hidden",
+    },
+    {
+      visibility : "visible",
+      repeat : -1,
+      yoyo : true,  // 若為true，則動畫repeat運行順序將會以倒放的形式回去，如溜溜球一樣
+      repeatDelay : 0.3,  // 下一次repeat的delay時間
+    }
+    );
+
+
+    // 3D tilt Effect with Vanilla-Tilt.js
+VanillaTilt.init(document.querySelector(".image1"), {
+  max: 25,
+  scale: 1.1,
+  speed: 1000,
+});
+VanillaTilt.init(document.querySelector(".image2"), {
+  max: 25,
+  scale: 1.1,
+  speed: 1000,
+});
+VanillaTilt.init(document.querySelector(".image3"), {
+  max: 25,
+  scale: 1.1,
+  speed: 1000,
+});
+

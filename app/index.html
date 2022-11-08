@@ -1,9 +1,31 @@
 ---
-title: Boostrap Index
+title: gsap
 layout: ./app/layout.ejs
 engine: ejs
 current: index
 ---
+
+<div class="box"></div>
+
+<section class="section4">
+  <ul class="loop">
+    <li>
+      <span> THE F2E THE F2E THE F2E THE F2E </span
+      ><span> THE F2E THE F2E THE F2E THE F2E </span>
+    </li>
+    <li>
+      <span> THE F2E THE F2E THE F2E THE F2E </span>
+      <span> THE F2E THE F2E THE F2E THE F2E </span>
+    </li>
+    <li>
+      <span> THE F2E THE F2E THE F2E THE F2E </span>
+      <span> THE F2E THE F2E THE F2E THE F2E </span>
+    </li>
+  </ul>
+</section>
+<div class="box5"></div>
+<div class="box6"></div>
+
 
 <section class="section1">
   <div class="container1">
@@ -11,4 +33,83 @@ current: index
   </div>
 </section>
 <section class="section2">
-</section>d
+</section>
+
+<!-- 畫面主要分為gate-left左邊與gate-right右邊元素，我們透過操作兩邊元素達到視差動畫效果 -->
+
+<section class="section3">
+  <div class="gate gate-left gate-left-1 z-20">
+    <i class="fa-solid fa-house"></i>
+  </div>
+  <div class="gate gate-right gate-right-1 z-20">
+    <h2>WEEK 1</h2>
+  </div>
+  <div class="gate gate-left gate-left-2 z-10">
+    <i class="fa-solid fa-cloud"></i>
+  </div>
+  <div class="gate gate-right gate-right-2 z-10">
+    <h2>WEEK 2</h2>
+  </div>
+  <div class="gate gate-left gate-left-3 z-0">
+    <i class="fa-solid fa-location-dot"></i>
+  </div>
+  <div class="gate gate-right gate-right-3 z-0">
+    <h2>WEEK 3</h2>
+  </div>
+  </section>
+
+  <div>
+    <div class="box2 ">2</div>
+    <p>
+      <span class="typing1"></span>
+      <span class="cursor">_</span>
+  	</p>
+  </div>
+
+  <div>
+    <div class="animation-wrapper box2 from-left">2</div>
+    <p>
+      <span class="animation-wrapper typing typing1"></span>
+      <span class="cursor">_</span>
+    </p>
+  </div>
+  
+  
+  <div>
+    <div class="animation-wrapper box2 from-right">2</div>
+    <p>
+      <span class="animation-wrapper typing typing2"></span>
+      <span class="cursor">_</span>
+    </p>
+  </div>
+  
+  
+  <div>
+    <div class="animation-wrapper box2 from-left">2</div>
+    <p>
+      <span class="animation-wrapper typing typing3"></span>
+      <span class="cursor">_</span>
+    </p>
+  </div>
+
+
+  <section class="section5">
+    <img
+      src="https://cdn.pixabay.com/photo/2022/09/25/09/58/houses-7477950_960_720.jpg"
+      class="image1"
+      alt="image1"
+      width="300"
+    />
+    <img
+      src="https://cdn.pixabay.com/photo/2022/08/22/19/02/landscape-7404347_960_720.jpg"
+      class="image2"
+      alt="imgae2"
+      width="300"
+    />
+    <img
+      src="https://cdn.pixabay.com/photo/2022/08/25/09/59/mountains-7409870_960_720.jpg"
+      class="image3"
+      alt="image3"
+      width="300"
+    />
+  </section>
