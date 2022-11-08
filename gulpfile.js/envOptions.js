@@ -51,6 +51,7 @@ let envOptions = {
       `${nodePath}/jquery/dist/jquery.slim.min.js`,
       `${nodePath}/bootstrap/dist/js/bootstrap.bundle.min.js`, // 已包含 popper.js
       `${nodePath}/gsap/dist/all.js`,//gsap
+      `${nodePath}/vanilla-tilt/dist/vanilla-tilt.js`,
     ],
     concat: 'vendors.js',
     path: `${distPath}/assets/js`,
