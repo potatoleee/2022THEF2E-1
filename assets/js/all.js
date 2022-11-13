@@ -81,36 +81,14 @@ srollTL.to(".gate-left-2", {
 srollTL.to(".gate-right-2", {
   yPercent: "100"
 }, "<");
-
-function animated(element) {
-  var x = 0; //設定元素初始值
-
-  if (element.classList.contains("from-left")) {
-    x = -100;
-  } else if (element.classList.contains("from-right")) {
-    x = -100;
-  }
-
-  element.style.transform = "translate(".concat(x, "px, 0px)");
-  gsap.fromTo(element, // from 開始
-  {
-    x: x,
-    y: 100,
-    opacity: 0,
-    visibility: "hidden"
-  }, // to 結束
-  {
-    duration: 1,
-    delay: 0.2,
-    x: 0,
-    y: 0,
-    visibility: "visible",
-    opacity: "1",
-    ease: "expo",
-    // 元素的運動速度變化
-    overwrite: "auto"
-  });
-}
+gsap.fromTo(".cursor", 0, {
+  visibility: "hidden"
+}, {
+  visibility: "visible",
+  repeat: -1,
+  yoyo: true,
+  repeatDelay: 0.3
+});
 
 function hide(element) {
   gsap.set(element, {
@@ -119,27 +97,130 @@ function hide(element) {
   });
 }
 
-gsap.to(".typing1", {
-  text: "這裡是第一段",
-  //text屬性將自動為DOM元素嵌入我們所輸入的文字
-  duration: 1.5,
-  scrollTrigger: {
-    trigger: ".typing1",
-    toggleActions: "play pause resume reset " //見備註
+function animated(element) {
+  var x = 0; //依照條件設定x初始值
 
+  if (element.classList.contains("from-left")) {
+    x = -100;
+  } else if (element.classList.contains("from-right")) {
+    x = 100;
+  } //設定元素初始值
+
+
+  element.style.transform = "translate(".concat(x, "px, 0px)");
+  gsap.fromTo(element, {
+    x: x,
+    y: 0,
+    opacity: 0,
+    visibility: "hidden"
+  }, {
+    duration: 1,
+    delay: 0.2,
+    x: 0,
+    y: 0,
+    visibility: "visible",
+    opacity: "1",
+    ease: "expo",
+    overwrite: "auto"
+  });
+}
+
+gsap.utils.toArray(".animation-wrapper").forEach(function (element) {
+  if (element.classList.contains("from-left") || element.classList.contains("from-right")) {
+    hide(element);
+    ScrollTrigger.create({
+      trigger: element,
+      markers: true,
+      onEnter: function onEnter() {
+        animated(element);
+      },
+      onEnterBack: function onEnterBack() {
+        animated(element);
+      },
+      onLeave: function onLeave() {
+        hide(element);
+      }
+    });
+  } else if (element.classList.contains("typing")) {
+    var typing1Content = "這裡是第一段";
+    var typing2Content = "這裡是第二段";
+    var typing3Content = "這裡是第三段";
+    gsap.to(".typing1", {
+      text: typing1Content,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: ".typing1",
+        toggleActions: "play pause resume reset"
+      }
+    });
+    gsap.to(".typing2", {
+      text: typing2Content,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: ".typing2",
+        toggleActions: "play pause resume reset"
+      }
+    });
+    gsap.to(".typing3", {
+      text: typing3Content,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: ".typing3",
+        toggleActions: "play pause resume reset"
+      }
+    });
   }
-});
-gsap.fromTo(".cursor", 0, {
-  visibility: "hidden"
-}, {
-  visibility: "visible",
-  repeat: -1,
-  yoyo: true,
-  // 若為true，則動畫repeat運行順序將會以倒放的形式回去，如溜溜球一樣
-  repeatDelay: 0.3 // 下一次repeat的delay時間
+}); // function animated(element) {
+//   let x = 0;
+//   //設定元素初始值
+//   if(element.classList.contains("from-left")){
+//     x = -100;
+//   }else if (element.classList.contains("from-right")){
+//     x = -100;
+//   }
+//   element.style.transform = `translate(${x}px, 0px)`;
+//   gsap.fromTo(
+//     element,
+//     // from 開始
+//     { x: x, y: 100, opacity: 0, visibility: "hidden" },
+//     // to 結束
+//     {
+//       duration: 1,
+//       delay: 0.2,
+//       x: 0,
+//       y: 0,
+//       visibility: "visible",
+//       opacity: "1",
+//       ease: "expo", // 元素的運動速度變化
+//       overwrite: "auto",
+//     }
+//   );
+// }
+// function hide(element) {
+//   gsap.set(element, { opacity: 0, visibility: "hidden" });
+// }
+// gsap.to(".typing1", {
+//   text: "這裡是第一段", //text屬性將自動為DOM元素嵌入我們所輸入的文字
+//   duration: 1.5,
+//   scrollTrigger: {
+// 		trigger: ".typing1",
+//     toggleActions: "play pause resume reset ", //見備註
+//   },
+// });
+// gsap.fromTo(".cursor",0,
+// {
+//   visibility :"hidden",
+// },
+// {
+//   visibility : "visible",
+//   repeat : -1,
+//   yoyo : true,  // 若為true，則動畫repeat運行順序將會以倒放的形式回去，如溜溜球一樣
+//   repeatDelay : 0.3,  // 下一次repeat的delay時間
+// }
+// );
+// 3D tilt Effect with Vanilla-Tilt.js
 
-}); // 3D tilt Effect with Vanilla-Tilt.js
-
+VanillaTilt.init();
 VanillaTilt.init(document.querySelector(".image1"), {
   max: 25,
   scale: 1.1,
