@@ -1,5 +1,3 @@
-const { init } = require("browser-sync");
-const { default: VanillaTilt } = require("vanilla-tilt");
 
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);//套件選填
