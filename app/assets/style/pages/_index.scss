@@ -1,0 +1,419 @@
+.btn__burger{
+    width: 16px;
+    height: 16px;
+    position: relative;
+
+   
+    &::before,&::after{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: $primary;
+        transition: all .5s;
+    }
+    &::before{
+        top: 9px;
+    }
+    &::after{
+        bottom: 9px;
+    }
+    &.open{
+        &::before{
+            top: 50%;
+            transform: rotate(-45deg);
+        }
+        &::after{
+            top: 50%;
+            transform: rotate(45deg);
+        }
+    }
+
+}
+
+.green-oval{
+    background-image: url(../images/green-oval.png);
+    background-size: auto;
+    background-position: center 6px;
+    background-repeat: no-repeat;
+    padding-bottom:140px ;
+    margin-bottom: 20px;
+    @include d-phone {
+        background-size: 68%;
+    }
+  
+}
+
+.black-oval{
+    background-image: url(../images/black-oval.png);
+    background-size: auto;
+    background-position: center 78px;
+    background-repeat: no-repeat;
+    @include d-phone {
+        background-size: 68%;
+    }
+}
+.star{
+    &__1{
+        right: 13%;
+        top: -20px;
+    }
+    &__2{
+        left: 24px;
+        bottom: 24px;
+    }
+    &__3{
+        top: -46px;
+    }
+    &__4{
+        bottom: -50px;
+    }
+}
+
+.rectangle__phone{
+    background-image: url('../images/Rectangle-phone.png');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.shadow-block{
+    position: relative;
+    &::before{
+        position: absolute;
+        content: "“動畫技能樹太雜無從下手？”";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primary;
+        color: white;
+        font-size: 52px;
+        text-align: center;
+        font-family: 'genSen-H';
+        padding: 24px;
+    }
+    
+    &::after{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 20px;
+        width: 100%;
+        height: 100%;
+        background: rgb(219, 17, 17);
+    }
+}
+.question{
+    &__1{
+        transform: rotate(-4.49deg);
+    }
+    &__2{
+        transform: rotate(8.58deg);
+    }
+    &__3{
+        transform: rotate(32.45deg);
+        padding-top: 10px;
+    }
+}
+
+.break__circle--gray{
+    max-width: 1800px;
+    padding-bottom: 100%;
+    object-fit: cover;
+    background-color: $light-orange;
+    border-radius: 100%;
+}
+.big-gray{
+    background-image: url("../images/bigCircle-gray.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 1800px;
+}
+.orange-circle{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+// .break__title{
+//     position: relative;
+//     &::before{
+//         content: "網頁互動式設計";
+//         position: absolute;
+//         background-image: url(../images/cloud-white.svg);
+//         background-size: auto;
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         width: 100%;
+//         height: 161px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//     }
+// }
+.break__title{
+    position: absolute;
+    top:14%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    &__bg{
+        position: absolute;
+        top:12%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+.grayCircle__img{
+    &--eyes{
+        top: 30%;
+        left: 38%;
+     
+    }
+    &--muiltCircle{
+        top:25%;
+         left:61%;
+        
+    }
+    &--figma{
+        top:26%;
+         left: 74%;
+    }
+    &--greenCloud{
+        top:36%;
+        left: 10%;
+      
+    }
+}
+
+.grayCircle__text{
+    &--hello{
+        top:24%;
+        left:25%;
+    }
+    &--ui{
+        top:23%;
+        left: 42%;
+        
+    }
+    &--front{
+        top:30%;
+        left:23%;
+    }
+    &--word{
+        top:35%;
+        left:38%;
+    }
+}
+.orange__text{
+    &--year{
+        bottom: 38%;
+        z-index: 3;
+    }
+    &--three{
+        bottom: 33%;
+        z-index: 3;
+    }
+    &--text{
+        bottom: 27%;
+        left: 37%;
+        z-index: 3;
+    }
+    &--star{
+        left: 33%;
+        bottom: 38%;
+        z-index: 2;
+    }
+    &--greenCloud{
+        bottom: 23%;
+        right: 21%;
+        z-index: 2;
+    }
+
+}
+.week{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $light-orange;
+}
+.lineDeco{
+    position: relative;
+    &::before{
+        position: absolute;
+        content: "";
+        width: 100vw;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        top: 100px;
+        z-index: 100;
+        left: 100%;
+
+    }   
+}
+
+.week__title {
+    position: absolute;
+    width: 100%;
+    height: 46%;
+    top:0;
+    left:0;
+    background: #F1EDE9;
+    font-size: 202px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include d-phone{
+        font-size: 40px;
+    }
+
+    &--1{
+        z-index: 30;
+
+    }
+    &--2{
+        z-index: 29;
+    }
+    &--3{
+        z-index: 28;
+    }
+
+  }
+ 
+  .week__content{
+    position: absolute;
+    width: 100%;
+    height: 54%;
+    bottom:0;
+    left:0;
+    z-index: 27;
+    background: #F1EDE9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--1{
+        z-index: 28;
+    }
+    &--2{
+        z-index: 27;
+    }
+    &--3{
+        z-index: 26;
+    }
+  }
+
+.smile{
+    position: absolute;
+    top: 19%;
+    transform: rotate(-12.37deg);
+    left: 15%;
+}
+ 
+.timeLine{
+    margin-top: 300px;
+    margin-bottom: 300px;
+}
+
+.timeLine__singUp{
+    position: absolute;
+    top: 0%;
+    left: 33%;
+    &__time{
+        top: 9%;
+        right: 13%;
+    }
+}
+
+.timeLine__start{
+    position: absolute;
+    top: 28%;
+    left: 55%;
+    &__time{
+        top: 37%;
+        right: 10%;
+    }
+}
+
+.timeLine__upload{
+    position: absolute;
+    top: 59%;
+    left: 55%;
+    &__time{
+        top: 68%;
+        right: 14%;
+    }
+}
+
+.timeLine__steam{
+    position: absolute;
+    bottom: 0%;
+    left: 45%;
+    &__time{
+        bottom: -5%;
+        right: 20%;
+    }
+}
+
+.list-style-position-inside{
+    list-style-position: inside;
+}
+.list-style-disc{
+    list-style: disc;
+}
+
+.review{
+    margin-top: 160px;
+    background-image: url("../images/green-retangle.svg");
+    background-repeat: no-repeat;
+    background-position: -50rem center;
+    background-size: cover;
+
+  
+    &__wrap{
+      position: relative;
+
+      &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $primary;
+        left: -88%;
+        top:0;
+        z-index: -1;
+    }
+
+    }
+    &__title{
+        top: -37px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.award{
+    margin-top: 160px;
+    background-image: url("../images/green-rentangle-right.svg");
+    background-repeat: no-repeat;
+    background-position: -50rem center;
+    background-size: cover;
+    &__wrap{
+        position: absolute;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $primary;
+            right: -88%;
+            top:0;
+            z-index: -1;
+        }
+    }
+    &__title{
+        top: -37px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

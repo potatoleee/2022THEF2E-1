@@ -1,6 +1,25 @@
+// @import "../../../node_modules/bootstrap/scss/functions";
+// @import "./helpers/variables";
+// @import "../../../node_modules/bootstrap/scss/bootstrap";
+
+
+// @import './layout/index.scss'
+
 @import "../../../node_modules/bootstrap/scss/functions";
+
 @import "./helpers/variables";
+
+@import "../../../node_modules/bootstrap/scss/utilities";
+
+@import "./helpers/utilities";
+
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
+@import "./helpers/mixin";
+// base
 
-@import './layout/index.scss'
+@import "./base/typography";
+@import "./base/base";
+
+//pages
+@import "./pages/index";
