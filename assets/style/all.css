@@ -20710,6 +20710,30 @@ sub {
   left: 15%;
 }
 
+.smile__title--1 {
+  position: absolute;
+  top: 3%;
+  left: 10%;
+}
+
+.smile__title--2 {
+  position: absolute;
+  top: 4%;
+  left: 16%;
+}
+
+.smile__title--3 {
+  position: absolute;
+  top: 6%;
+  left: 22%;
+}
+
+.smile__title--4 {
+  position: absolute;
+  top: 9%;
+  left: 27%;
+}
+
 .timeLine {
   margin-top: 300px;
   margin-bottom: 300px;

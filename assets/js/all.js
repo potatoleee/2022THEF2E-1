@@ -37,7 +37,6 @@ AOS.init({
   anchorPlacement: 'top-bottom' // defines which position of the element regarding to window should trigger the animation
 
 });
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
 gsap.to(".loop", {
   xPercent: "-50",
   ease: "none",
@@ -47,7 +46,7 @@ gsap.to(".loop", {
 var tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".orange__text--text",
-    markers: true,
+    markers: false,
     start: 'top 35%',
     end: 'top 1%',
     scrub: true
@@ -56,14 +55,14 @@ var tl = gsap.timeline({
 var tk = gsap.timeline({
   scrollTrigger: {
     trigger: ".orange__text--text",
-    markers: true,
+    markers: false,
     start: 'top 35%',
     end: 'top 1%',
     scrub: true
   }
 });
 tl.to('.orange-circle', {
-  top: '-100%',
+  top: '0%',
   // yPercent: '-100',
   duration: 1000,
   position: 'absolute'
@@ -79,14 +78,14 @@ var scrollTL = gsap.timeline({
   scrollTrigger: {
     trigger: ".week",
     pin: true,
-    markers: true,
+    markers: false,
     scrub: true
   }
 });
 var smile = gsap.timeline({
   scrollTrigger: {
     trigger: ".timeLine__singUp__time",
-    markers: true,
+    markers: false,
     start: 'top 35%',
     end: 'top 1%',
     scrub: true
@@ -95,7 +94,7 @@ var smile = gsap.timeline({
 var smile2 = gsap.timeline({
   scrollTrigger: {
     trigger: ".timeLine__start__time",
-    markers: true,
+    markers: false,
     start: 'top 35%',
     end: 'top 1%',
     scrub: true
@@ -104,7 +103,7 @@ var smile2 = gsap.timeline({
 var smile3 = gsap.timeline({
   scrollTrigger: {
     trigger: ".timeLine__upload",
-    markers: true,
+    markers: false,
     start: 'top 35%',
     end: 'top 1%',
     scrub: true
