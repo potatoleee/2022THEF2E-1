@@ -2,7 +2,7 @@
     width: 16px;
     height: 16px;
     position: relative;
-
+  
    
     &::before,&::after{
         position: absolute;
@@ -28,10 +28,10 @@
             transform: rotate(45deg);
         }
     }
-
-}
-
-.green-oval{
+  
+  }
+  
+  .green-oval{
     background-image: url(../images/green-oval.png);
     background-size: auto;
     background-position: center 6px;
@@ -42,9 +42,9 @@
         background-size: 68%;
     }
   
-}
-
-.black-oval{
+  }
+  
+  .black-oval{
     background-image: url(../images/black-oval.png);
     background-size: auto;
     background-position: center 78px;
@@ -52,8 +52,8 @@
     @include d-phone {
         background-size: 68%;
     }
-}
-.star{
+  }
+  .star{
     &__1{
         right: 13%;
         top: -20px;
@@ -68,15 +68,15 @@
     &__4{
         bottom: -50px;
     }
-}
-
-.rectangle__phone{
+  }
+  
+  .rectangle__phone{
     background-image: url('../images/Rectangle-phone.png');
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
-}
-.shadow-block{
+  }
+  .shadow-block{
     position: relative;
     &::before{
         position: absolute;
@@ -102,8 +102,8 @@
         height: 100%;
         background: rgb(219, 17, 17);
     }
-}
-.question{
+  }
+  .question{
     &__1{
         transform: rotate(-4.49deg);
     }
@@ -114,44 +114,44 @@
         transform: rotate(32.45deg);
         padding-top: 10px;
     }
-}
-
-.break__circle--gray{
+  }
+  
+  .break__circle--gray{
     max-width: 1800px;
     padding-bottom: 100%;
     object-fit: cover;
     background-color: $light-orange;
     border-radius: 100%;
-}
-.big-gray{
+  }
+  .big-gray{
     background-image: url("../images/bigCircle-gray.svg");
     background-size: contain;
     background-repeat: no-repeat;
     height: 1800px;
-}
-.orange-circle{
+  }
+  .orange-circle{
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-}
-// .break__title{
-//     position: relative;
-//     &::before{
-//         content: "網頁互動式設計";
-//         position: absolute;
-//         background-image: url(../images/cloud-white.svg);
-//         background-size: auto;
-//         background-position: center;
-//         background-repeat: no-repeat;
-//         width: 100%;
-//         height: 161px;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//     }
-// }
-.break__title{
+  }
+  // .break__title{
+  //     position: relative;
+  //     &::before{
+  //         content: "網頁互動式設計";
+  //         position: absolute;
+  //         background-image: url(../images/cloud-white.svg);
+  //         background-size: auto;
+  //         background-position: center;
+  //         background-repeat: no-repeat;
+  //         width: 100%;
+  //         height: 161px;
+  //         display: flex;
+  //         justify-content: center;
+  //         align-items: center;
+  //     }
+  // }
+  .break__title{
     position: absolute;
     top:14%;
     left: 50%;
@@ -163,8 +163,8 @@
         left: 50%;
         transform: translateX(-50%);
     }
-}
-.grayCircle__img{
+  }
+  .grayCircle__img{
     &--eyes{
         top: 30%;
         left: 38%;
@@ -184,9 +184,9 @@
         left: 10%;
       
     }
-}
-
-.grayCircle__text{
+  }
+  
+  .grayCircle__text{
     &--hello{
         top:24%;
         left:25%;
@@ -204,8 +204,8 @@
         top:35%;
         left:38%;
     }
-}
-.orange__text{
+  }
+  .orange__text{
     &--year{
         bottom: 38%;
         z-index: 3;
@@ -229,16 +229,16 @@
         right: 21%;
         z-index: 2;
     }
-
-}
-.week{
+  
+  }
+  .week{
     position: relative;
     display: flex;
     height: 100vh;
     overflow: hidden;
     background-color: $light-orange;
-}
-.lineDeco{
+  }
+  .lineDeco{
     position: relative;
     &::before{
         position: absolute;
@@ -249,11 +249,11 @@
         top: 100px;
         z-index: 100;
         left: 100%;
-
+  
     }   
-}
-
-.week__title {
+  }
+  
+  .week__title {
     position: absolute;
     width: 100%;
     height: 46%;
@@ -267,10 +267,10 @@
     @include d-phone{
         font-size: 40px;
     }
-
+  
     &--1{
         z-index: 30;
-
+  
     }
     &--2{
         z-index: 29;
@@ -278,9 +278,9 @@
     &--3{
         z-index: 28;
     }
-
+  
   }
- 
+  
   .week__content{
     position: absolute;
     width: 100%;
@@ -302,20 +302,20 @@
         z-index: 26;
     }
   }
-
-.smile{
+  
+  .smile{
     position: absolute;
     top: 19%;
     transform: rotate(-12.37deg);
     left: 15%;
-}
- 
-.timeLine{
+  }
+  
+  .timeLine{
     margin-top: 300px;
     margin-bottom: 300px;
-}
-
-.timeLine__singUp{
+  }
+  
+  .timeLine__singUp{
     position: absolute;
     top: 0%;
     left: 33%;
@@ -323,9 +323,9 @@
         top: 9%;
         right: 13%;
     }
-}
-
-.timeLine__start{
+  }
+  
+  .timeLine__start{
     position: absolute;
     top: 28%;
     left: 55%;
@@ -333,9 +333,9 @@
         top: 37%;
         right: 10%;
     }
-}
-
-.timeLine__upload{
+  }
+  
+  .timeLine__upload{
     position: absolute;
     top: 59%;
     left: 55%;
@@ -343,9 +343,9 @@
         top: 68%;
         right: 14%;
     }
-}
-
-.timeLine__steam{
+  }
+  
+  .timeLine__steam{
     position: absolute;
     bottom: 0%;
     left: 45%;
@@ -353,26 +353,26 @@
         bottom: -5%;
         right: 20%;
     }
-}
-
-.list-style-position-inside{
+  }
+  
+  .list-style-position-inside{
     list-style-position: inside;
-}
-.list-style-disc{
+  }
+  .list-style-disc{
     list-style: disc;
-}
-
-.review{
+  }
+  
+  .review{
     margin-top: 160px;
     background-image: url("../images/green-retangle.svg");
     background-repeat: no-repeat;
     background-position: -50rem center;
     background-size: cover;
-
+  
   
     &__wrap{
       position: relative;
-
+  
       &::before{
         content: "";
         position: absolute;
@@ -383,37 +383,42 @@
         top:0;
         z-index: -1;
     }
-
+  
     }
     &__title{
         top: -37px;
         left: 50%;
         transform: translateX(-50%);
     }
-}
-
-.award{
+  }
+  
+  .award{
     margin-top: 160px;
     background-image: url("../images/green-rentangle-right.svg");
     background-repeat: no-repeat;
     background-position: -50rem center;
     background-size: cover;
-    &__wrap{
-        position: absolute;
-        &::before{
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: $primary;
-            right: -88%;
-            top:0;
-            z-index: -1;
-        }
-    }
+   
     &__title{
         top: -37px;
         left: 50%;
         transform: translateX(-50%);
     }
-}
+  }
+  .award1{
+    background-image:linear-gradient(90deg,transparent 50%,#4E7B57 50%);
+  }
+  .btn-signUp{
+    padding: 31px 146px;
+    border-radius: 20px;
+    font-size: 64px;
+    margin-bottom: 151px;
+  }
+  .sponsor{
+    height: 100vh;
+  }
+  .sponsor-title{
+    padding-top: 142px;
+    margin-bottom: 146px;
+  }
+  
