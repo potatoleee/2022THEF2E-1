@@ -11479,6 +11479,10 @@ fieldset:disabled .btn {
   border-radius: 3.125rem !important;
 }
 
+.rounded-50 {
+  border-radius: 50px !important;
+}
+
 .rounded-100 {
   border-radius: 100px !important;
 }
@@ -20760,27 +20764,34 @@ sub {
   background-size: cover;
 }
 
-.award__wrap {
-  position: absolute;
-}
-
-.award__wrap::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #4E7B57;
-  right: -88%;
-  top: 0;
-  z-index: -1;
-}
-
 .award__title {
   top: -37px;
   left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+.award1 {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, #4E7B57));
+  background-image: -o-linear-gradient(left, transparent 50%, #4E7B57 50%);
+  background-image: linear-gradient(90deg, transparent 50%, #4E7B57 50%);
+}
+
+.btn-signUp {
+  padding: 31px 146px;
+  border-radius: 20px;
+  font-size: 64px;
+  margin-bottom: 151px;
+}
+
+.sponsor {
+  height: 100vh;
+}
+
+.sponsor-title {
+  padding-top: 142px;
+  margin-bottom: 146px;
 }
 
 /*# sourceMappingURL=all.css.map */
